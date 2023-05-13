@@ -9,20 +9,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.SQS" Version="3.7.102.3" />
-        <PackageReference Include="Bogus" Version="34.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+        <PackageReference Include="AWSSDK.SQS" Version="3.7.102.3"/>
+        <PackageReference Include="Bogus" Version="34.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Shared\Contracts\Contracts.csproj" />
-        <ProjectReference Include="..\..\..\Shared\Infrastructure\Infrastructure.csproj" />
+        <ProjectReference Include="..\..\..\Shared\Contracts\Contracts.csproj"/>
+        <ProjectReference Include="..\..\..\Shared\Infrastructure\Infrastructure.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\..\..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Content Include="..\..\..\..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
     </ItemGroup>
 
 </Project>

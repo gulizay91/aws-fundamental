@@ -20,4 +20,3 @@ var sendMessageRequest = new SendMessageRequest
 };
 var sendResponse = await sqsClient.SendMessageAsync(sendMessageRequest);
 Console.WriteLine(JsonSerializer.Serialize(sendResponse));
-
