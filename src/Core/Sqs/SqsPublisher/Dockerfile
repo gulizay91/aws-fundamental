@@ -1,6 +1,8 @@
 ﻿FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
 WORKDIR /app
 
+ENV ASPNETCORE_ENVIRONMENT=Production
+
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["src/Core/Sqs/SqsPublisher/SqsPublisher.csproj", "src/Core/Sqs/SqsPublisher/"]
