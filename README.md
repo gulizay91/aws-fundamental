@@ -77,3 +77,15 @@ arn:aws:sqs:<Region>:<AccountId>:users -> Subscription Endpoint
   ]
 }
 ```
+
+# AWS SNS Topic Subscription Filter Policy
+### Message attributes filter policy scope
+If we use this policy, only messages with this attribute will receive.
+```sh
+{
+  "MessageType": [
+    "CreateUser"
+  ]
+}
+```
+
