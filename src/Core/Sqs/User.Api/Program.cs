@@ -34,6 +34,15 @@ userRoute.MapPost("/", async (CreateUser user, IAmazonSqsService amazonSqsServic
   return Results.Ok(response);
 });
 
+userRoute.MapPatch("/", async (UpdateUser user, IAmazonSqsService amazonSqsService) =>
+{
+  var response =
+    await amazonSqsService.PublishStandartMessageAsync(user, QueueNames.UserQueueName,
+      user.GetContractMessageAttributes());
+  return Results.Ok(response);
+});
+
+
 await app.RunAsync();
 
 void ConfigurationSettings(IConfigurationBuilder configurationBuilder)
