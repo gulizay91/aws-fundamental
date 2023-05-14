@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.101.64"/>
         <PackageReference Include="AWSSDK.SQS" Version="3.7.102.3"/>
         <PackageReference Include="Bogus" Version="34.0.2"/>
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="7.0.5"/>

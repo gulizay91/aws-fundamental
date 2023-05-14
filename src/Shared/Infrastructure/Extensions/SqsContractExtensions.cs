@@ -4,11 +4,11 @@ using Infrastructure.Constants;
 
 namespace Infrastructure.Extensions;
 
-public static class ContractExtensions
+public static class SqsContractExtensions
 {
   private const string StringDataType = "String";
 
-  public static Dictionary<string, MessageAttributeValue> GetContractMessageAttributes<T>(this T contract)
+  public static Dictionary<string, MessageAttributeValue> GetSqsContractMessageAttributes<T>(this T contract)
     where T : IContract
   {
     return new Dictionary<string, MessageAttributeValue>
@@ -32,7 +32,7 @@ public static class ContractExtensions
     };
   }
 
-  public static Dictionary<string, MessageAttributeValue> GetCommandMessageAttributesV0<T>(this T contract)
+  public static Dictionary<string, MessageAttributeValue> GetSqsCommandMessageAttributes<T>(this T contract)
     where T : ICommand
   {
     return new Dictionary<string, MessageAttributeValue>
@@ -64,7 +64,8 @@ public static class ContractExtensions
     };
   }
 
-  public static Dictionary<string, MessageAttributeValue> GetEventMessageAttributes<T>(this T contract) where T : IEvent
+  public static Dictionary<string, MessageAttributeValue> GetSqsEventMessageAttributes<T>(this T contract)
+    where T : IEvent
   {
     return new Dictionary<string, MessageAttributeValue>
     {

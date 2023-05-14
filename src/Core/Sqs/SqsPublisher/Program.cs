@@ -7,7 +7,7 @@ using Infrastructure.Constants;
 using Infrastructure.Extensions;
 using Infrastructure.ObjectMothers.User;
 
-Console.WriteLine("Hello, Publisher!");
+Console.WriteLine("Hello, SqsPublisher!");
 
 var sqsClient = new AmazonSQSClient();
 var queueUrlResponse = await sqsClient.GetQueueUrlAsync(QueueNames.UserQueueName);
@@ -16,7 +16,7 @@ var sendMessageRequest = new SendMessageRequest
 {
   QueueUrl = queueUrlResponse.QueueUrl,
   MessageBody = JsonSerializer.Serialize(ContractObjectMother.SimpleFakeCreateUser()),
-  MessageAttributes = commandCreateUser.GetContractMessageAttributes()
+  MessageAttributes = commandCreateUser.GetSqsContractMessageAttributes()
 };
 var sendResponse = await sqsClient.SendMessageAsync(sendMessageRequest);
 Console.WriteLine(JsonSerializer.Serialize(sendResponse));

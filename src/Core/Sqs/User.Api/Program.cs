@@ -30,7 +30,7 @@ userRoute.MapPost("/", async (CreateUser user, IAmazonSqsService amazonSqsServic
 {
   var response =
     await amazonSqsService.PublishStandartMessageAsync(user, QueueNames.UserQueueName,
-      user.GetContractMessageAttributes());
+      user.GetSqsContractMessageAttributes());
   return Results.Ok(response);
 });
 
@@ -38,7 +38,7 @@ userRoute.MapPatch("/", async (UpdateUser user, IAmazonSqsService amazonSqsServi
 {
   var response =
     await amazonSqsService.PublishStandartMessageAsync(user, QueueNames.UserQueueName,
-      user.GetContractMessageAttributes());
+      user.GetSqsContractMessageAttributes());
   return Results.Ok(response);
 });
 

@@ -5,7 +5,7 @@ using Amazon.SQS;
 using Amazon.SQS.Model;
 using Infrastructure.Constants;
 
-Console.WriteLine("Hello, Consumer!");
+Console.WriteLine("Hello, SqsConsumer!");
 
 var cancellationTokenSource = new CancellationTokenSource();
 var sqsClient = new AmazonSQSClient();
