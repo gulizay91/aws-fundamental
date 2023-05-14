@@ -17,7 +17,7 @@ public class AmazonSqsService : IAmazonSqsService
     _logger = logger;
   }
 
-  public async Task<string> GetQueueUrl(string queueName)
+  public async ValueTask<string> GetQueueUrl(string queueName)
   {
     var queueUrlResponse = await _amazonSqsClient.GetQueueUrlAsync(queueName);
     return queueUrlResponse.QueueUrl;

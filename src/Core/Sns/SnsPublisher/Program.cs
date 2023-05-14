@@ -7,11 +7,10 @@ using Infrastructure.Constants;
 using Infrastructure.Extensions;
 using Infrastructure.ObjectMothers.User;
 
-Console.WriteLine("Hello, SnsPublisher!");
+Console.WriteLine("Hello, SnsPublisher! This publisher' messages consume by SqsConsumer");
 
 var snsClient = new AmazonSimpleNotificationServiceClient();
 var commandCreateUser = ContractObjectMother.SimpleFakeCreateUser();
-
 
 var topicArnResponse = await snsClient.FindTopicAsync(QueueNames.UserQueueName);
 
