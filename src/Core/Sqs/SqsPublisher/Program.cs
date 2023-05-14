@@ -16,7 +16,7 @@ var sendMessageRequest = new SendMessageRequest
 {
   QueueUrl = queueUrlResponse.QueueUrl,
   MessageBody = JsonSerializer.Serialize(ContractObjectMother.SimpleFakeCreateUser()),
-  MessageAttributes = commandCreateUser.GetCommandMessageInfo()
+  MessageAttributes = commandCreateUser.GetContractMessageAttributes()
 };
 var sendResponse = await sqsClient.SendMessageAsync(sendMessageRequest);
 Console.WriteLine(JsonSerializer.Serialize(sendResponse));
