@@ -1,6 +1,14 @@
 # aws-fundamental
 Based on [Cloud Fundamentals: AWS Services for C# Developers Course by Nick Chapsas](https://dometrain.com/course/cloud-fundamentals-aws-services-for-c-developers/)
 
+
+# AWS CLI install on MacOS
+```sh
+> curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+> sudo installer -pkg AWSCLIV2.pkg -target /
+> aws --version
+```
+
 # AWS SQS Queues
 ```sh
 arn:aws:sqs:<Region>:<AccountId>:users
@@ -88,4 +96,32 @@ If we use this policy, only messages with this attribute will receive.
   ]
 }
 ```
+
+# Dotnet AWS tool
+```
+> dotnet tool install -g Amazon.Lambda.Tools
+> dotnet new -i Amazon.Lambda.Templates
+```
+# AWS Lambda Functions
+### List lambda functions
+```
+> aws lambda list-functions
+```
+
+### Invoke function & get content on aws lambda node.js
+```
+> aws lambda invoke --function-name <LambdaFunctionName> --cli-binary-format raw-in-base64-out --payload '{ ""Hello"": ""From Console"" }' response.json
+> Get-Content .\response.json
+```
+
+### Deploy function to AWS Lambda Dotnet
+```
+> cd "../<projectFolder>"
+> dotnet lambda deploy-function <LambdaFunctionName>
+```
+### Deploy function to AWS Lambda Dotnet
+```
+>  dotnet lambda invoke-function SimpleLambda --payload '{ "input": "lambda" }'
+```
+
 
