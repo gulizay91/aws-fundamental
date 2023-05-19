@@ -153,3 +153,10 @@ If we use this policy, only messages with this attribute will receive.
 > dotnet build
 > dotnet lambda-test-tool-6.0
 ```
+### Deploy AWS Sqs Lambda with Dotnet Project: SimpleSqsLambda
+```
+> cd "../<projectFolder>"
+> dotnet lambda deploy-function SimpleSqsLambda
+```
+
+
