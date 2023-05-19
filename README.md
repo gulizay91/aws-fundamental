@@ -98,11 +98,19 @@ If we use this policy, only messages with this attribute will receive.
 ```
 
 # Dotnet AWS tool
+### Install Amazon.Lambda.Tools Global Tools if not already installed.
 ```
 > dotnet tool install -g Amazon.Lambda.Tools
+```
+### If already installed check if new version is available.
+```
+> dotnet tool update -g Amazon.Lambda.Tools
+```
+### Install Lambda additional templates If you need, it is available.
+```
 > dotnet new -i Amazon.Lambda.Templates
 ```
-# AWS Lambda Functions
+# [AWS Lambda Functions](https://docs.aws.amazon.com/lambda/latest/dg/csharp-package-cli.html)
 ### List lambda functions
 ```
 > aws lambda list-functions
@@ -114,14 +122,34 @@ If we use this policy, only messages with this attribute will receive.
 > Get-Content .\response.json
 ```
 
-### Deploy function to AWS Lambda Dotnet
+### Deploy AWS Lambda function with Dotnet Project: SimpleLambda
 ```
 > cd "../<projectFolder>"
-> dotnet lambda deploy-function <LambdaFunctionName>
+> dotnet lambda deploy-function SimpleLambda
 ```
-### Deploy function to AWS Lambda Dotnet
+### Invoke AWS Lambda function
 ```
 >  dotnet lambda invoke-function SimpleLambda --payload '{ "input": "lambda" }'
 ```
 
+### Deploy AWS Lambda Serverless with Dotnet Project: SimpleLambdaServerless
+```
+> cd "../<projectFolder>"
+> dotnet lambda deploy-serverless SimpleLambdaServerless
+```
 
+### Delete AWS Lambda Serverless with Dotnet Project: SimpleLambdaServerless
+```
+> cd "../<projectFolder>"
+> dotnet lambda delete-serverless SimpleLambdaServerless
+```
+### [Install AWS Lambda TestTool](https://github.com/aws/aws-lambda-dotnet/blob/master/Tools/LambdaTestTool/README.md#installing-and-running)
+```
+> dotnet tool install -g Amazon.Lambda.TestTool-6.0
+```
+### Build dotnet and run test tool
+```
+> cd "../<projectFolder>"
+> dotnet build
+> dotnet lambda-test-tool-6.0
+```

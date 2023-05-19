@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Api", "src\Core\Sns\Us
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLambda", "src\Core\LambdaFunction\SimpleLambda\src\SimpleLambda\SimpleLambda.csproj", "{CFE02D7C-0194-4BF9-8446-EEE44C0DAC8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLambdaServerless", "src\Core\LambdaFunction\SimpleLambdaServerless\src\SimpleLambdaServerless\SimpleLambdaServerless.csproj", "{5BC3D1EA-2E50-4076-BBFD-53BFF8253472}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,7 @@ Global
 		{D28714D8-04FC-43C2-8447-35E35183354A} = {0880DFB3-EC7F-45F0-9068-FB55309231F4}
 		{6A2DD3FA-08DD-4CF0-9036-B0A2BF8C6BCB} = {0880DFB3-EC7F-45F0-9068-FB55309231F4}
 		{CFE02D7C-0194-4BF9-8446-EEE44C0DAC8B} = {8479CBD5-CA35-4C37-AC85-528C9E43B734}
+		{5BC3D1EA-2E50-4076-BBFD-53BFF8253472} = {8479CBD5-CA35-4C37-AC85-528C9E43B734}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{403ACFC5-7075-479B-BFD0-AB65AF34EE9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -93,5 +96,9 @@ Global
 		{CFE02D7C-0194-4BF9-8446-EEE44C0DAC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFE02D7C-0194-4BF9-8446-EEE44C0DAC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFE02D7C-0194-4BF9-8446-EEE44C0DAC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC3D1EA-2E50-4076-BBFD-53BFF8253472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC3D1EA-2E50-4076-BBFD-53BFF8253472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC3D1EA-2E50-4076-BBFD-53BFF8253472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC3D1EA-2E50-4076-BBFD-53BFF8253472}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
