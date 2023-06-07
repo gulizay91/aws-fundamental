@@ -9,7 +9,8 @@ Console.WriteLine("Hello, SqsConsumer!");
 
 var cancellationTokenSource = new CancellationTokenSource();
 var sqsClient = new AmazonSQSClient();
-var queueUrlResponse = await sqsClient.GetQueueUrlAsync(QueueNames.UserQueueName);
+//var queueUrlResponse = await sqsClient.GetQueueUrlAsync(QueueNames.UserQueueName);
+var queueUrlResponse = await sqsClient.GetQueueUrlAsync(QueueNames.SqsTestQueueName);
 
 var receiveMessageRequest = new ReceiveMessageRequest
 {

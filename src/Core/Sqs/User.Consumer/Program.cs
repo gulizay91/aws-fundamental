@@ -7,7 +7,7 @@ using User.Consumer.Services.AmazonSqs;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Console.WriteLine("User.Api starting...");
+Console.WriteLine("User.Consumer starting...");
 ConfigureHostSettings(builder.Host);
 Console.WriteLine("Configured Host Settings...");
 ConfigurationSettings(builder.Configuration);

@@ -10,7 +10,8 @@ using Infrastructure.ObjectMothers.User;
 Console.WriteLine("Hello, SqsPublisher!");
 
 var sqsClient = new AmazonSQSClient();
-var queueUrlResponse = await sqsClient.GetQueueUrlAsync(QueueNames.UserQueueName);
+
+var queueUrlResponse = await sqsClient.GetQueueUrlAsync(QueueNames.SqsTestQueueName);
 var commandCreateUser = ContractObjectMother.SimpleFakeCreateUser();
 var sendMessageRequest = new SendMessageRequest
 {
