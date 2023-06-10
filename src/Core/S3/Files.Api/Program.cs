@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Files.Api.Configurations;
 using Files.Api.Configurations.Swagger;
 using Files.Api.Middlewares;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +38,7 @@ void RegisterServices(IServiceCollection serviceCollection, IConfiguration confi
   serviceCollection.RegisterLoggers(configurationRoot);
   serviceCollection.RegisterSwagger();
   serviceCollection.RegisterControllers();
-  serviceCollection.RegisterServices();
+  serviceCollection.RegisterServices(configurationRoot);
 }
 
 void ConfigureWebApplication(IApplicationBuilder applicationBuilder)
