@@ -8,6 +8,14 @@ Based on [Cloud Fundamentals: AWS Services for C# Developers Course by Nick Chap
 > sudo installer -pkg AWSCLIV2.pkg -target /
 > aws --version
 ```
+# Configure AWS CLI
+```sh
+> aws configure
+> aws configure list-profiles
+> aws configure set region us-west-1 --profile <profileName/>
+> aws configure get region --profile <profileName/>
+> aws configure get aws_secret_access_key --profile <profileName/>
+```
 
 # AWS SQS Queues
 ```sh

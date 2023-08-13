@@ -1,23 +1,26 @@
 using Amazon.S3;
 using Amazon.S3.Model;
+using Files.Api.Settings.AWSSettings;
+using Microsoft.Extensions.Options;
 
 namespace Files.Api.Services;
 
 public class AmazonS3Service : IAmazonS3Service
 {
-  private const string BucketName = "themoonstudio-root";
+  private readonly IOptions<AmazonSettings> _options;
   private readonly IAmazonS3 _s3;
 
-  public AmazonS3Service(IAmazonS3 s3)
+  public AmazonS3Service(IAmazonS3 s3, IOptions<AmazonSettings> options)
   {
     _s3 = s3;
+    _options = options;
   }
 
   public async Task<PutObjectResponse> UploadFileAsync(string fileName, string filePath, IFormFile file)
   {
     var putObjectRequest = new PutObjectRequest
     {
-      BucketName = BucketName,
+      BucketName = _options.Value.AmazonS3Settings.BucketName,
       Key = $"{filePath}/{fileName}",
       ContentType = file.ContentType,
       InputStream = file.OpenReadStream(),
@@ -35,7 +38,7 @@ public class AmazonS3Service : IAmazonS3Service
   {
     var getObjectRequest = new GetObjectRequest
     {
-      BucketName = BucketName,
+      BucketName = _options.Value.AmazonS3Settings.BucketName,
       Key = $"{filePath}/{fileName}"
     };
 
@@ -46,7 +49,7 @@ public class AmazonS3Service : IAmazonS3Service
   {
     var deleteObjectRequest = new DeleteObjectRequest
     {
-      BucketName = BucketName,
+      BucketName = _options.Value.AmazonS3Settings.BucketName,
       Key = $"{filePath}/{fileName}"
     };
 
@@ -58,7 +61,7 @@ public class AmazonS3Service : IAmazonS3Service
     // Create a CopyObject request
     var request = new GetPreSignedUrlRequest
     {
-      BucketName = BucketName,
+      BucketName = _options.Value.AmazonS3Settings.BucketName,
       Key = $"{filePath}/{fileName}",
       Expires = DateTime.Now.AddMinutes(expireMinutes!.Value)
     };

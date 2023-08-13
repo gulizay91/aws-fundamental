@@ -39,6 +39,7 @@ void RegisterServices(IServiceCollection serviceCollection, IConfiguration confi
   serviceCollection.RegisterSwagger();
   serviceCollection.RegisterControllers();
   serviceCollection.RegisterServices(configurationRoot);
+  serviceCollection.RegisterSettings(configurationRoot);
 }
 
 void ConfigureWebApplication(IApplicationBuilder applicationBuilder)
